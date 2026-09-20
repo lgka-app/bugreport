@@ -2,6 +2,8 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "lgka-bugreport",
   "main": "src/index.ts",
+  // Logo and icons; the Worker handles every other path.
+  "assets": { "directory": "./public" },
   "compatibility_date": "2026-09-01",
   "workers_dev": false,
   "preview_urls": false,
@@ -13,6 +15,10 @@
     "logs": { "enabled": true, "invocation_logs": false, "head_sampling_rate": 1 }
   },
   // EU-jurisdiction database, same stance as the API: school data stays in the EU.
+  // Screenshots, same EU jurisdiction as the database.
+  "r2_buckets": [
+    { "binding": "UPLOADS", "bucket_name": "lgka-bugreport-uploads", "jurisdiction": "eu" }
+  ],
   "d1_databases": [
     { "binding": "DB", "database_name": "lgka-bugreport", "database_id": "09657805-48c9-40fe-90d9-44ac9705fcd9" }
   ]

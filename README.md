@@ -3,13 +3,18 @@
 Das Fehlermeldungs-Formular der LGKA+ App — https://bugreport.lgka.app
 
 Ein Cloudflare Worker, der das Formular selbst ausliefert (server-gerendertes HTML,
-kein Client-JavaScript, damit es in jedem In-App-WebView funktioniert) und die
-Meldungen in einer D1-Datenbank speichert.
+kein Client-JavaScript, damit es in jedem In-App-WebView funktioniert), die
+Meldungen in einer D1-Datenbank speichert und Screenshots in R2 ablegt.
+
+Pflicht ist nur „Was ist passiert?“ (mit `*` markiert). Screenshots: bis zu 4
+Bilder, je max. 8 MB, nur Bildformate (PNG, JPG, WebP, HEIC, GIF). Die Objekte
+liegen unter `reports/<id>/<n>.<ext>` im Bucket `lgka-bugreport-uploads` (EU) und
+sind **nicht öffentlich** — sie werden nur über `/admin/file?key=…` ausgeliefert.
 
 ## Datenschutz
 
-Gespeichert wird ausschließlich, was die Person ins Formular tippt, plus ein
-Zeitstempel. Keine IP-Adresse, kein User-Agent, keine Cookies, keine
+Gespeichert wird ausschließlich, was die Person ins Formular tippt oder hochlädt,
+plus ein Zeitstempel. Keine IP-Adresse, kein User-Agent, keine Cookies, keine
 Request-Logs (`invocation_logs: false`). Die Datenbank liegt in der
 EU-Jurisdiktion (`lgka-bugreport`, Region EEUR) — gleiche Linie wie `lgka-api`.
 
