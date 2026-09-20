@@ -247,8 +247,8 @@ export function formPage(error?: string): string {
     `
 <header>
   ${LOGO}
-  <h1>Etwas funktioniert nicht?</h1>
-  <p class="lede">Danke, dass du dir kurz Zeit nimmst. Ich lese jede Meldung selbst und versuche, den Fehler nachzustellen und zu beheben.</p>
+  <h1>Etwas geht nicht?</h1>
+  <p class="lede">Geht an mich, nicht an einen Support. Je genauer du's beschreibst, desto eher finde ich's.</p>
 </header>
 
 <a class="link-row" href="https://ig.me/m/lxka76" target="_blank" rel="noopener">
@@ -256,8 +256,8 @@ export function formPage(error?: string): string {
     <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5v.01"/></svg>
   </span>
   <span class="text">
-    <b>Lieber kurz schreiben?</b>
-    <span>Schreib mir direkt auf Instagram – @lxka76</span>
+    <b>Geht auch direkt</b>
+    <span>@lxka76 auf Instagram</span>
   </span>
   <svg class="chev" width="9" height="15" viewBox="0 0 9 15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m1.5 1.5 6 6-6 6"/></svg>
 </a>
@@ -270,17 +270,17 @@ ${
 
 <form method="post" action="/" enctype="multipart/form-data">
   <section>
-    <h2 class="section-title">Der Fehler</h2>
-    <p class="legend"><span class="req">*</span> Pflichtfeld – alles andere kannst du weglassen.</p>
+    <h2 class="section-title">Was nicht geht</h2>
+    <p class="legend"><span class="req">*</span> muss, der Rest ist optional.</p>
     <div class="card">
       <div class="field">
         <label for="what">Was ist passiert? <span class="req" aria-hidden="true">*</span></label>
-        <p class="hint">Schreib einfach in deinen eigenen Worten, was nicht geklappt hat – und wenn du magst, was du davor gemacht hast und ob es jedes Mal passiert.</p>
+        <p class="hint">Was du gemacht hast, was dann kam. Und ob's jedes Mal passiert.</p>
         <textarea id="what" name="what" required maxlength="5000"></textarea>
       </div>
       <div class="field">
-        <label for="where_in_app">Wo in der App war das?</label>
-        <p class="hint">z.&nbsp;B. „Vertretungsplan“ oder „beim Öffnen“.</p>
+        <label for="where_in_app">Wo in der App?</label>
+        <p class="hint">z.&nbsp;B. Vertretungsplan, oder direkt beim Öffnen.</p>
         <input id="where_in_app" name="where_in_app" maxlength="200" autocomplete="off" enterkeyhint="next">
       </div>
       <div class="split">
@@ -299,7 +299,7 @@ ${
       </div>
       <div class="field">
         <label for="screenshots">Screenshots</label>
-        <p class="hint">Ein Bild sagt mehr als tausend Worte – bis zu 4 Bilder, je max. 8&nbsp;MB.</p>
+        <p class="hint">Hilft oft mehr als Text. Bis zu 4 Bilder, je max. 8&nbsp;MB.</p>
         <input id="screenshots" name="screenshots" type="file" accept="image/*" multiple>
       </div>
     </div>
@@ -312,11 +312,11 @@ ${
         <div class="icon-square" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4L3 21l1.1-3.3A8.4 8.4 0 1 1 21 11.5Z"/></svg>
         </div>
-        <p><strong>Wenn ich dich erreichen kann, hilft mir das sehr.</strong> Oft ist eine kurze Rückfrage („Auf welchem Bildschirm genau?“) der Unterschied zwischen „kann ich beheben“ und „finde ich nie“. Und ich kann dir Bescheid sagen, wenn es behoben ist.</p>
+        <p><strong>Optional</strong> – aber ohne kann ich nicht nachfragen, wenn was unklar ist. Und du erfährst nicht, wenn's gefixt ist.</p>
       </div>
       <div class="field">
-        <label for="contact">Name und/oder Kontakt</label>
-        <p class="hint">E-Mail, Handynummer, Instagram – was dir am liebsten ist.</p>
+        <label for="contact">Wie erreiche ich dich?</label>
+        <p class="hint">E-Mail, Nummer, Insta – such dir was aus.</p>
         <input id="contact" name="contact" maxlength="200" autocomplete="off" placeholder="z. B. Max, @max oder max@example.com" enterkeyhint="send">
       </div>
     </div>
@@ -327,8 +327,8 @@ ${
     <input id="website" name="website" tabindex="-1" autocomplete="off">
   </div>
 
-  <button type="submit">Absenden</button>
-  <p class="footnote">Gespeichert wird nur, was du hier einträgst und hochlädst – keine IP-Adresse, kein Konto, keine Cookies.</p>
+  <button type="submit">Abschicken</button>
+  <p class="footnote">Gespeichert wird nur, was du hier einträgst und hochlädst. Keine IP-Adresse, kein Konto, keine Cookies.</p>
 </form>
 `,
   );
@@ -336,25 +336,24 @@ ${
 
 export function thanksPage(): string {
   return shell(
-    "Danke! – LGKA+ App",
+    "Ist da – LGKA+ App",
     `
 <header>
   <div class="done-mark" aria-hidden="true">
     <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg>
   </div>
-  <h1>Danke dir!</h1>
-  <p class="lede">Deine Meldung ist angekommen.</p>
+  <h1>Ist da.</h1>
+  <p class="lede">Ich schau's mir an.</p>
 </header>
 
 <section>
   <div class="card">
     <div class="field">
-      <p class="hint" style="margin:0">Ich schaue sie mir an und versuche, den Fehler nachzustellen. Falls du einen Kontakt dagelassen hast, melde ich mich bei Rückfragen – oder wenn es behoben ist.</p>
+      <p class="hint" style="margin:0">Mit Kontakt meld ich mich, wenn was unklar ist – oder wenn's gefixt ist.</p>
     </div>
   </div>
 </section>
 
-<p class="footnote">Du kannst dieses Fenster jetzt schließen.</p>
 `,
   );
 }

@@ -43,7 +43,7 @@ app.post("/", async (c) => {
   if (clean(form.get("website"), 10) !== null) return c.html(thanksPage());
 
   const what = clean(form.get("what"), 5000);
-  if (!what) return c.html(formPage("Bitte schreib kurz, was passiert ist."), 400);
+  if (!what) return c.html(formPage("Schreib kurz, was passiert ist."), 400);
 
   const files = form
     .getAll("screenshots")
@@ -52,10 +52,10 @@ app.post("/", async (c) => {
 
   for (const f of files) {
     if (!TYPES[f.type]) {
-      return c.html(formPage("Screenshots gehen als Bild (PNG, JPG, HEIC oder WebP)."), 400);
+      return c.html(formPage("Screenshots nur als Bild – PNG, JPG, HEIC oder WebP."), 400);
     }
     if (f.size > MAX_BYTES) {
-      return c.html(formPage("Ein Bild ist größer als 8 MB – bitte kleiner oder weniger Bilder."), 400);
+      return c.html(formPage("Ein Bild ist über 8 MB. Kleiner machen oder weglassen."), 400);
     }
   }
 
