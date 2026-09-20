@@ -147,6 +147,21 @@ select {
 }
 .icon-square svg { width: 22px; height: 22px; stroke: var(--accent); }
 .callout p { margin: 0; font-size: 14px; line-height: 1.45; color: var(--secondary); }
+
+/* the Instagram shortcut above the form — a tappable card row */
+.link-row {
+  display: flex; gap: 14px; align-items: center;
+  background: var(--surface); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 14px 16px;
+  margin: 0 0 26px; text-decoration: none; color: inherit;
+  transition: opacity 0.15s ease, transform 0.08s ease;
+}
+.link-row:hover { opacity: 0.92; }
+.link-row:active { transform: scale(0.99); }
+.link-row .text { flex: 1; min-width: 0; }
+.link-row .text b { display: block; font-size: 15px; font-weight: 600; }
+.link-row .text span { font-size: 13px; color: var(--secondary); }
+.link-row .chev { flex: 0 0 auto; color: var(--tertiary); }
 .callout strong { color: var(--text); font-weight: 600; }
 
 button {
@@ -235,6 +250,17 @@ export function formPage(error?: string): string {
   <h1>Etwas funktioniert nicht?</h1>
   <p class="lede">Danke, dass du dir kurz Zeit nimmst. Ich lese jede Meldung selbst und versuche, den Fehler nachzustellen und zu beheben.</p>
 </header>
+
+<a class="link-row" href="https://ig.me/m/lxka76" target="_blank" rel="noopener">
+  <span class="icon-square" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5v.01"/></svg>
+  </span>
+  <span class="text">
+    <b>Lieber kurz schreiben?</b>
+    <span>Schreib mir direkt auf Instagram – @lxka76</span>
+  </span>
+  <svg class="chev" width="9" height="15" viewBox="0 0 9 15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m1.5 1.5 6 6-6 6"/></svg>
+</a>
 
 ${
   error
